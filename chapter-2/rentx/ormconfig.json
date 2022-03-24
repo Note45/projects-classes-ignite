@@ -1,7 +1,8 @@
 {
   "type": "postgres",
   "host": "localhost",
-  "user": "",
-  "password": "",
+  "post": 5432,
+  "username": "docker",
+  "password": "docker",
   "database": "rentx"
 }
