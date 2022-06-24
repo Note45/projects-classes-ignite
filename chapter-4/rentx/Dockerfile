@@ -1,13 +1,12 @@
 FROM node:lts
 
-WORKDIR /use/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-COPY package.json ./
-
+COPY package.json /usr/src/app/
 RUN npm install
+COPY . /usr/src/app
 
-COPY . .
-
-EXPOSE 3333
+EXPOSE 3333 
 
 CMD ["npm", "run", "start:dev"]
