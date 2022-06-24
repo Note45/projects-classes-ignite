@@ -1,4 +1,4 @@
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 import { Car } from "../../infra/typeorm/entities/Car";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
@@ -9,7 +9,8 @@ interface IRequest {
   name?: string;
 }
 
-export class ListCarsUseCase {
+@injectable()
+export class ListAvailableCarsUseCase {
   constructor(
     @inject("CarsRepository")
     private carsReposiotry: ICarsRepository
